@@ -68,7 +68,7 @@ public abstract class Command {
         // Define arguments
         this.name = name;
         this.prefix = prefix;
-        this.description = description != null ? description : "";
+        this.description = description != null ? description : "-/-";
         this.aliases = Arrays.stream(aliases).map(String::toLowerCase).toArray(String[]::new);
         this.access = access;
     }
