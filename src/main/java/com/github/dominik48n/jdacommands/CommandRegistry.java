@@ -1,5 +1,6 @@
 package com.github.dominik48n.jdacommands;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -13,5 +14,9 @@ public class CommandRegistry {
 
     public void unregisterCommand(final String name) {
         this.commands.remove(name.toLowerCase());
+    }
+
+    public Map<String, Command> getCommands() {
+        return Collections.unmodifiableMap(this.commands);
     }
 }

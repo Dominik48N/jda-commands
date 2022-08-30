@@ -1,7 +1,12 @@
 package com.github.dominik48n.jdacommands;
 
 import com.google.common.base.Preconditions;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.jda.api.entities.channel.unions.GuildChannelUnion;
+import net.dv8tion.jda.api.entities.channel.unions.GuildMessageChannelUnion;
+import net.dv8tion.jda.api.entities.channel.unions.MessageChannelUnion;
 
 public abstract class Command {
 
@@ -83,4 +88,21 @@ public abstract class Command {
     public Role[] getAccess() {
         return this.access;
     }
+
+    /**
+     * This abstract method is executed when the command is entered.
+     *
+     * @param guild        the {@link Guild} the command was run on.
+     * @param member       the command executor as {@link Member}
+     * @param channel      the {@link MessageChannelUnion}
+     * @param guildChannel the {@link GuildChannelUnion}
+     * @param arguments    These are the arguments that were additionally specified.
+     */
+    public abstract void execute(
+        final Guild guild,
+        final Member member,
+        final MessageChannelUnion channel,
+        final GuildMessageChannelUnion guildChannel,
+        final String[] arguments
+    );
 }

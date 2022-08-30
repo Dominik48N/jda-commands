@@ -1,5 +1,6 @@
 package com.github.dominik48n.jdacommands;
 
+import com.github.dominik48n.jdacommands.listener.SlashCommandInteractionListener;
 import net.dv8tion.jda.api.JDABuilder;
 
 public class JDACommands {
@@ -12,6 +13,8 @@ public class JDACommands {
     private JDACommands(final JDABuilder jdaBuilder) {
         this.commandRegistry = new CommandRegistry();
         this.jdaBuilder = jdaBuilder;
+
+        this.jdaBuilder.addEventListeners(new SlashCommandInteractionListener());
 
         INSTANCE = this;
     }
