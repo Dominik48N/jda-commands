@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.dominik48n</groupId>
+  <artifactId>jda-commands</artifactId>
+  <version>1.0.0</version>
+
+  <name>JDA-Commands</name>
+  <description>JDA Commands is an extension for JDA to make commands easier and clearer to develop.</description>
+  <url>https://github.com/Dominik48N/jda-commands</url>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+
+  <build>
+    <finalName>${project.name}-${project.version}</finalName>
+  </build>
+</project>

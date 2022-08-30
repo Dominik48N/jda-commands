@@ -1,0 +1,26 @@
+# top-most EditorConfig file
+root = true
+
+# Unix-style newlines with a newline ending every file
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# Set encoding of files with specified ending.
+[*.{java, json, yml, yaml, xml}]
+charset = utf-8
+
+# Set indentation for Java source files.
+[*.java]
+indent_style = space
+indent_size = 4
+
+# YAML doesn't like tabs
+[*.{yml, yaml}]
+indent_style = space
+indent_size = 4
+
+# Consistency.
+[*{.xml, json}]
+indent_style = space
+indent_size = 2
