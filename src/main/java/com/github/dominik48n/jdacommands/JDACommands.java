@@ -1,5 +1,6 @@
 package com.github.dominik48n.jdacommands;
 
+import com.github.dominik48n.jdacommands.listener.MessageReceivedListener;
 import com.github.dominik48n.jdacommands.listener.SlashCommandInteractionListener;
 import net.dv8tion.jda.api.JDA;
 
@@ -17,6 +18,7 @@ public class JDACommands {
 
         // Register listeners
         this.jda.addEventListener(new SlashCommandInteractionListener());
+        this.jda.addEventListener(new MessageReceivedListener());
 
         // Define class instance
         INSTANCE = this;
