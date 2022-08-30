@@ -17,6 +17,15 @@
     <maven.compiler.target>8</maven.compiler.target>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>net.dv8tion</groupId>
+      <artifactId>JDA</artifactId>
+      <version>5.0.0-alpha.18</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+
   <build>
     <finalName>${project.name}-${project.version}</finalName>
   </build>
