@@ -66,7 +66,7 @@ public abstract class Command {
         // Define arguments
         this.name = name;
         this.prefix = prefix;
-        this.description = description;
+        this.description = description != null ? description : "";
         this.aliases = aliases;
         this.access = access;
     }

@@ -1,21 +1,24 @@
 package com.github.dominik48n.jdacommands;
 
 import com.github.dominik48n.jdacommands.listener.SlashCommandInteractionListener;
-import net.dv8tion.jda.api.JDABuilder;
+import net.dv8tion.jda.api.JDA;
 
 public class JDACommands {
 
     private static JDACommands INSTANCE;
 
     private final CommandRegistry commandRegistry;
-    private final JDABuilder jdaBuilder;
+    private final JDA jda;
 
-    private JDACommands(final JDABuilder jdaBuilder) {
-        this.commandRegistry = new CommandRegistry();
-        this.jdaBuilder = jdaBuilder;
+    private JDACommands(final JDA jda) {
+        // Initialize variables
+        this.commandRegistry = new CommandRegistry(jda);
+        this.jda = jda;
 
-        this.jdaBuilder.addEventListeners(new SlashCommandInteractionListener());
+        // Register listeners
+        this.jda.addEventListener(new SlashCommandInteractionListener());
 
+        // Define class instance
         INSTANCE = this;
     }
 
@@ -23,9 +26,20 @@ public class JDACommands {
         return this.commandRegistry;
     }
 
-    public static JDACommands init(final JDABuilder jdaBuilder) {
+    public JDA getJDA() {
+        return this.jda;
+    }
+
+    /**
+     * Initialize the jda commands.
+     * Please Note: If the JDA Commands have already been initialized, this will not work a second time.
+     *
+     * @param jda the bot {@link JDA}
+     * @return the initialized {@link JDACommands} class.
+     */
+    public static JDACommands init(final JDA jda) {
         if (INSTANCE != null) throw new IllegalStateException("JDACommands is already initialized.");
-        return new JDACommands(jdaBuilder);
+        return new JDACommands(jda);
     }
 
     public static JDACommands getInstance() {
