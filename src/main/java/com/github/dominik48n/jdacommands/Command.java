@@ -60,6 +60,8 @@ public abstract class Command {
         // Check null arguments
         Preconditions.checkNotNull(name, "The name of a command cannot be null.");
         Preconditions.checkNotNull(prefix, "The prefix of a command cannot be null.");
+        Preconditions.checkNotNull(aliases, "The aliases of a command cannot be null.");
+        Preconditions.checkNotNull(access, "The access roles of a command cannot be null.");
 
         // Define arguments
         this.name = name;
