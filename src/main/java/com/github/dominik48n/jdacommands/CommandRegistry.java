@@ -12,6 +12,6 @@ public class CommandRegistry {
     }
 
     public void unregisterCommand(final String name) {
-        this.commands.remove(name);
+        this.commands.remove(name.toLowerCase());
     }
 }
