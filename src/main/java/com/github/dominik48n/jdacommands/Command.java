@@ -1,6 +1,8 @@
 package com.github.dominik48n.jdacommands;
 
 import com.google.common.base.Preconditions;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.Role;
@@ -67,7 +69,7 @@ public abstract class Command {
         this.name = name;
         this.prefix = prefix;
         this.description = description != null ? description : "";
-        this.aliases = aliases;
+        this.aliases = Arrays.stream(aliases).map(String::toLowerCase).toArray(String[]::new);
         this.access = access;
     }
 

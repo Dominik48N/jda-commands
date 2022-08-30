@@ -24,7 +24,18 @@ public class CommandRegistry {
         final String name = command.getName().toLowerCase();
 
         this.commands.put(name, command);
-        if (command.getPrefix().startsWith("/")) this.jda.upsertCommand(name, command.getDescription()).queue();
+
+        for (final String alias : command.getAliases()) {
+            this.commands.put(alias, command);
+        }
+
+        if (command.getPrefix().startsWith("/")) {
+            this.jda.upsertCommand(name, command.getDescription()).queue();
+
+            for (final String alias : command.getAliases()) {
+                this.jda.upsertCommand(alias, command.getDescription()).queue();
+            }
+        }
     }
 
     /**
@@ -36,7 +47,20 @@ public class CommandRegistry {
         name = name.toLowerCase();
 
         final Command command = this.commands.remove(name);
-        if (command != null && command.getPrefix().startsWith("/")) this.jda.deleteCommandById(name).queue();
+
+        if (command == null) return; // Command is not exists.
+
+        for (final String alias : command.getAliases()) {
+            this.commands.remove(alias);
+        }
+
+        if (command.getPrefix().startsWith("/")) {
+            this.jda.deleteCommandById(name).queue();
+
+            for (final String alias : command.getAliases()) {
+                this.jda.deleteCommandById(alias).queue();
+            }
+        }
     }
 
     public Map<String, Command> getCommands() {
