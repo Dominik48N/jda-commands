@@ -9,7 +9,7 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class MessageReceivedListener extends ListenerAdapter {
 
-    public void handle(final MessageReceivedEvent event) {
+    public void onMessageReceived(final MessageReceivedEvent event) {
         final String message = event.getMessage().getContentStripped();
         final Command command = JDACommands.getInstance().getCommandRegistry().getCommands().get(message);
 

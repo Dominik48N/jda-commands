@@ -10,7 +10,7 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class SlashCommandInteractionListener extends ListenerAdapter {
 
-    public void handle(final SlashCommandInteractionEvent event) {
+    public void onSlashCommandInteraction(final SlashCommandInteractionEvent event) {
         final Command command = JDACommands.getInstance().getCommandRegistry().getCommands().get(event.getName().toLowerCase());
 
         if (command == null || !command.getPrefix().startsWith("/"))
