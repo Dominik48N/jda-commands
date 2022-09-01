@@ -10,5 +10,41 @@ The following things are required to use JDA Commands:
 * Java 8+
 * [JDA](https://github.com/DV8FromTheWorld/JDA) v5.0.0-alpha.18
 
+## Usage
+How you can use the API is written in our [wiki](https://github.com/Dominik48N/jda-commands/wiki/Welcome). Here you will only be briefly shown how to implement the API in Maven and Gradle.
+
+### Maven
+Add the following to your `pom.xml`:
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
+<dependencies>
+  <dependency>
+    <groupId>com.github.Dominik48N</groupId>
+    <artifactId>jda-commands</artifactId>
+    <version>1.0.0</version>
+  </dependency>
+</dependencies>
+```
+
+### Gradle
+Add the following to your `build.gradle`:
+```kt
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+  
+dependencies {
+  implementation 'com.github.Dominik48N:jda-commands:Tag'
+}
+```
+
 ## License
 This repository is licensed with the [Apache License 2.0](https://github.com/Dominik48N/jda-commands/blob/master/LICENSE).
