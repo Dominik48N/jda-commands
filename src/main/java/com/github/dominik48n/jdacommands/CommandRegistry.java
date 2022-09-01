@@ -53,14 +53,6 @@ public class CommandRegistry {
         for (final String alias : command.getAliases()) {
             this.commands.remove(alias);
         }
-
-        if (command.getPrefix().startsWith("/")) {
-            this.jda.deleteCommandById(name).queue();
-
-            for (final String alias : command.getAliases()) {
-                this.jda.deleteCommandById(alias).queue();
-            }
-        }
     }
 
     public Map<String, Command> getCommands() {
