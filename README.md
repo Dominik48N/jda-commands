@@ -11,7 +11,7 @@ The following things are required to use JDA Commands:
 * [JDA](https://github.com/DV8FromTheWorld/JDA) v5.0.0-alpha.18
 
 ## Usage
-How you can use the API is written in our [wiki](https://github.com/Dominik48N/jda-commands/wiki/Welcome). Here you will only be briefly shown how to implement the API in Maven and Gradle.
+How you can use the API is written in our [wiki](https://github.com/Dominik48N/jda-commands/wiki). Here you will only be briefly shown how to implement the API in Maven and Gradle.
 
 ### Maven
 Add the following to your `pom.xml`:
