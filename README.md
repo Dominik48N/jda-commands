@@ -42,7 +42,7 @@ allprojects {
 }
   
 dependencies {
-  implementation 'com.github.Dominik48N:jda-commands:1.0.0'
+  implementation 'com.github.Dominik48N:jda-commands:1.0.1'
 }
 ```
 
