@@ -8,7 +8,7 @@ If you have questions or problems regarding the JDA Commands API, you can create
 ## Requirements
 The following things are required to use JDA Commands:
 * Java 8+
-* [JDA](https://github.com/DV8FromTheWorld/JDA) v5.0.0-alpha.19
+* [JDA](https://github.com/DV8FromTheWorld/JDA) v5.0.0-alpha.20
 
 ## Usage
 How you can use the API is written in our [wiki](https://github.com/Dominik48N/jda-commands/wiki). Here you will only be briefly shown how to implement the API in Maven and Gradle.
