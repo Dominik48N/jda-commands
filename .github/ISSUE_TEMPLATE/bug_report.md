@@ -21,7 +21,7 @@ If applicable, add screenshots to help explain your problem.
 
 **System (please complete the following information):**
  - Java-Version: [e.g. 11]
- - JDA-Version [e.g. 5.0.0-alpha.19]
+ - JDA-Version [e.g. 5.0.0-alpha.20]
  - Project-Version [e.g. 1.0.0]
 
 **Additional context**
