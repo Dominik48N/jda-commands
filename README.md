@@ -27,7 +27,7 @@ Add the following to your `pom.xml`:
   <dependency>
     <groupId>com.github.Dominik48N</groupId>
     <artifactId>jda-commands</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
   </dependency>
 </dependencies>
 ```
@@ -42,7 +42,7 @@ allprojects {
 }
   
 dependencies {
-  implementation 'com.github.Dominik48N:jda-commands:1.0.1'
+  implementation 'com.github.Dominik48N:jda-commands:1.0.2'
 }
 ```
 
